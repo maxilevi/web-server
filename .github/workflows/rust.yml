@@ -15,7 +15,7 @@ jobs:
           override: true
       - uses: actions-rs/cargo@v1
         with:
-          command: check -p http_server
+          command: check
 
   test:
     name: Test Suite
@@ -45,7 +45,7 @@ jobs:
       - uses: actions-rs/cargo@v1
         with:
           command: fmt
-          args: -p http_server --all -- --check
+          args: --all -- --check
 
   clippy:
     name: Clippy
@@ -61,4 +61,4 @@ jobs:
       - uses: actions-rs/cargo@v1
         with:
           command: clippy
-          args: -p http_server -- -D warnings
+          args: -- -D warnings
